@@ -9,12 +9,8 @@ class Artist {
         $this->name = $name;
     }
     
-    public function getTitle() {
-        return $this->title;
-    }
-    
-    public function getDuration() {
-        return $this->duration;
+    public function getName() {
+        return $this->name;
     }
 }
 

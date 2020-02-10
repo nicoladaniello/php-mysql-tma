@@ -1,4 +1,7 @@
 <?php
+require_once('include/functions.php');
+
+$view = new View();
 
 // Code to detect whether index.php has been requested without query string goes here
 // If no parameter detected...
@@ -16,11 +19,13 @@ switch ($id) {
     case 'home':
         include 'views/home.php';
         break;
-    case 'testDogClass':
-        include 'views/testDog.php';
-        break;
-    case 'testMyDB':
-        include 'views/testMyDB.php';
+    case 'artists':
+        $view->artists = array(
+            new Artist(0, 'Luciano Pavarotti'),
+            new Artist(1, 'Luciano Ligabue'),
+            new Artist(2, 'Lucio Dalla')
+        );
+        $content = $view->render('view-artists.php');
         break;
     default:
         include 'views/404.php';
